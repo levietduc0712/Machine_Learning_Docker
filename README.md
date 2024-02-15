@@ -1,6 +1,6 @@
 # Project Title
 
-The Face Mask Detection Web Application is a tool designed to detect whether individuals in images are wearing face masks or not. Developed by Viet Duc, this web application utilizes machine learning models to analyze images and provide real-time feedback on the presence of face masks.
+The Face Mask Detection Web Application is a tool designed to detect whether individuals in images are wearing face masks or not. Developed by me, this web application utilizes machine learning models to analyze images and provide real-time feedback on the presence of face masks.
 
 ## Prerequisites
 
@@ -50,27 +50,33 @@ Tag the Docker image with your Docker Hub username and the desired repository na
 ```
     docker tag <image_id> <dockerhub_username>/<repository_name>:<tag>
 ```
-Replace '<image_id>' with the ID of the Docker image you want to push, '<dockerhub_username>' with your Docker Hub username, '<repository_name>' with the name of the repository on Docker Hub, and '<tag>' with the desired tag for the image.
+Replace `<image_id>` with the ID of the Docker image you want to push, `<dockerhub_username>` with your Docker Hub username, `<repository_name>` with the name of the repository on Docker Hub, and `<tag>` with the desired tag for the image.
 
-4. Push the Docker Image
+4. Push the Docker Image.
 Finally, push the tagged Docker image to Docker Hub using the following command:
 ```
     docker push <dockerhub_username>/<repository_name>:<tag>
 ```
 This command uploads the Docker image to your Docker Hub account, making it available for others to pull and use.
 
-5. Verify Image on Docker Hub
+5. Verify Image on Docker Hub.
 Once the push is successful, you can verify that the Docker image is available on Docker Hub by visiting the repository page on Docker Hub in your web browser.
 
-## Deploy to Microsoft Azue using Azure App Service Web App
-1. Navigate to https://portal.azure.com/#home
-2. Select **App Services**
-<kbd>![Explore Photos](https://raw.githubusercontent.com/levietduc0712/Docker_Python/master/screenshots/S1.png?raw=true)</kbd>
+## Run Demo
+1. Pull Docker Image.
+Open a terminal or command prompt and execute the following command to pull the Docker image:
+```
+   docker pull vietduc712/ml-server
+```
 
-3. Enter a name for your new web app, and create a new Resource Group. Select Linux for the Operating System.
-<kbd>![Explore Photos](https://raw.githubusercontent.com/levietduc0712/Docker_Python/master/screenshots/S2.png?raw=true)</kbd>
+2. Run Docker Container.
+Once the image is pulled, you can run a container using the following command:
+```
+   docker-compose up --build
+```
+This command creates and starts a container based on the `vietduc712/ml-server` image. 
 
-4. Enter the docker image name.
-<kbd>![Explore Photos](https://raw.githubusercontent.com/levietduc0712/Docker_Python/master/screenshots/S3.png?raw=true)</kbd>
+3. Access the ML Server.
+Once the container is running, you can access the ML server by visiting http://localhost:5000 in your web browser or using any HTTP client to interact with it programmatically.
 
-5. Select Review and create. Review your configuration, and select Create when you are done.
+<kbd>![Explore Photos](https://raw.githubusercontent.com/levietduc0712/Machine_Learning_Docker/master/screenshots/S1.png?raw=true)</kbd>
